@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './styles/App.scss';
 
 function App() {
 
@@ -73,7 +74,7 @@ function App() {
           </div>
           </form>
 
-          <div className="wrapper">
+          <div>
             <h2>Responses</h2>
 
             <div className="response-container">
