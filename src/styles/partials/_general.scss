@@ -1,16 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@400;600;700;800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@400;600;700;800&display=swap");
 
 $shadow1: gainsboro;
 $gradient: linear-gradient(315deg, #734ae8 0%, #89d4cf 74%);
 
-
 html {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 125%;
     overflow-x: hidden;
 }
-
 
 body {
     overflow-x: hidden;
@@ -34,7 +31,7 @@ ul {
 }
 
 p,
-a, 
+a,
 span,
 li {
     color: black;
@@ -61,10 +58,25 @@ label {
     display: block;
 }
 
+textarea {
+    width: 100%;
+    max-width: 1200px;
+}
+
 .wrapper {
     width: 85%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+.button-container {
+    justify-content: flex-end;
+    display: flex;
+}
 
+.response-container {
+    padding: 15px 0;
+    p {
+        padding: 5px 0;
+    }
+}

@@ -282,8 +282,25 @@ label {
   display: block;
 }
 
+textarea {
+  width: 100%;
+  max-width: 1200px;
+}
+
 .wrapper {
   width: 85%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.button-container {
+  justify-content: flex-end;
+  display: flex;
+}
+
+.response-container {
+  padding: 15px 0;
+}
+.response-container p {
+  padding: 5px 0;
 }/*# sourceMappingURL=App.css.map */
