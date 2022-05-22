@@ -6,14 +6,9 @@ function App() {
   const [userPrompt, setUserPrompt] = useState("");
   const [userResponse, setUserResponse] = useState("");
   const [userInput, setUserInput] = useState("");
-
-  const [userKey, setUserKey] = useState(1);
-
+  const [userKey, setUserKey] = useState();
   const [flag, setFlag] = useState(false);
-
   const [allPromptResponse, setAllPromptResponse] = useState([]);
-
-  // let key = 0;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +20,6 @@ function App() {
   }
 
   useEffect(() => {
-    // debugger
     if (flag === true) {
       const newObj = {
         prompt: userPrompt,
@@ -34,13 +28,11 @@ function App() {
       };
       setAllPromptResponse([newObj, ...allPromptResponse]);
       setFlag(false);
-      // console.log(newObj);
     }
     console.log(allPromptResponse);
   }, [allPromptResponse, flag, userKey, userPrompt, userResponse]);
 
   useEffect(() => {
-    // debugger
     const data = {
       prompt: userPrompt,
       temperature: 0.5,
@@ -71,7 +63,7 @@ function App() {
         })
         .then((jsondata) => {
           setUserResponse(jsondata.choices[0].text);
-          setUserKey(jsondata.created);        
+          setUserKey(jsondata.created);
           setFlag(true);
         })
         .catch((error) => {
@@ -80,28 +72,6 @@ function App() {
 
     }
   }, [userPrompt]);
-
-  // useEffect(() => {
-
-  //   if (toggle === true) {
-  //     const element = {
-  //       userPrompt : userPrompt,
-  //       userResponse : userResponse,
-
-  //     };
-  //     // setToggle(false);
-  //     // let newElement = [];
-  //     // setAllPromptResponse([element, ...allPromptResponse])
-  //     // console.log(toggle);
-  //     console.log(element);
-  //     // newElement = [...element, newElement];
-  //     // newElement.userPrompt = userPrompt;
-  //     // newElement.userResponse = userResponse;
-  //     // setAllPromptResponse(...element);
-  //     console.log(allPromptResponse);
-  //   }
-  // },[allPromptResponse, toggle, userPrompt, userResponse]);
-
 
 
   return (
@@ -125,21 +95,18 @@ function App() {
 
           <div>
             <h2>Responses</h2>
-            {/* map */}
-
+            <div className="word-container">
+              
             {allPromptResponse.map((prop) => {
               return (
                 <div className="response-container" key={prop.key}>
-                  <p className="user-prompt">Prompt: {prop.prompt}</p>
-                  <p className="user-response">Response: {prop.response}</p>
+                  <p className="user-prompt">Prompt: <span className="text">{prop.prompt}</span></p>
+                  <p className="user-response">Response: <span className="text">{prop.response}</span></p>
                 </div>
               );
             })}
-
-            {/* <div className="response-container">
-              <p className="user-prompt">Prompt: {userPrompt}</p>
-              <p className="user-response">Response: {userResponse}</p>
-            </div> */}
+            
+            </div>
 
           </div>
         </div>

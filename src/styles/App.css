@@ -232,7 +232,6 @@ html {
 }
 
 html {
-  font-family: "Poppins", sans-serif;
   font-size: 125%;
   overflow-x: hidden;
 }
@@ -240,6 +239,11 @@ html {
 body {
   overflow-x: hidden;
   width: 100vw;
+}
+
+header {
+  background-color: #14C38E;
+  color: white;
 }
 
 h1,
@@ -272,6 +276,18 @@ li {
 
 button {
   margin: 10px 5px;
+  padding: 10px;
+  background-color: #14C38E;
+  color: white;
+  border-style: none;
+  border-radius: 20px;
+  transition: all 0.5s ease-in-out;
+}
+
+button:hover {
+  transition: all 0.5s ease-in-out;
+  background-color: #2b8063;
+  color: white;
 }
 
 input {
@@ -280,11 +296,16 @@ input {
 
 label {
   display: block;
+  padding: 15px 0;
 }
 
 textarea {
   width: 100%;
   max-width: 1200px;
+}
+
+h1, h2, label, button, textarea, p {
+  font-family: "Poppins", sans-serif;
 }
 
 .wrapper {
@@ -296,11 +317,20 @@ textarea {
 .button-container {
   justify-content: flex-end;
   display: flex;
+  padding: 15px 0;
+}
+
+.word-container {
+  transition: all;
 }
 
 .response-container {
-  padding: 15px 0;
+  background-color: #14C38E;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 10px;
 }
-.response-container p {
+.response-container p, .response-container span {
   padding: 5px 0;
+  color: white;
 }/*# sourceMappingURL=App.css.map */
