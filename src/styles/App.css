@@ -302,6 +302,7 @@ label {
 textarea {
   width: 100%;
   max-width: 1200px;
+  padding: 10px;
 }
 
 h1, h2, label, button, textarea, p {
