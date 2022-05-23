@@ -242,8 +242,9 @@ body {
 }
 
 header {
-  background-color: #14C38E;
+  background-color: #019267;
   color: white;
+  padding: 15px 0;
 }
 
 h1,
@@ -274,11 +275,21 @@ li {
   list-style: none;
 }
 
+h1,
+h2,
+label,
+button,
+textarea,
+p {
+  font-family: "Poppins", sans-serif;
+}
+
 button {
   margin: 10px 5px;
   padding: 10px;
-  background-color: #14C38E;
+  background-color: #019267;
   color: white;
+  font-weight: 600;
   border-style: none;
   border-radius: 20px;
   transition: all 0.5s ease-in-out;
@@ -286,7 +297,7 @@ button {
 
 button:hover {
   transition: all 0.5s ease-in-out;
-  background-color: #2b8063;
+  background-color: #14c38e;
   color: white;
 }
 
@@ -297,16 +308,13 @@ input {
 label {
   display: block;
   padding: 15px 0;
+  font-weight: 600;
 }
 
 textarea {
   width: 100%;
   max-width: 1200px;
   padding: 10px;
-}
-
-h1, h2, label, button, textarea, p {
-  font-family: "Poppins", sans-serif;
 }
 
 .wrapper {
@@ -326,12 +334,13 @@ h1, h2, label, button, textarea, p {
 }
 
 .response-container {
-  background-color: #14C38E;
+  background-color: #019267;
   margin: 15px 0;
   padding: 20px;
   border-radius: 10px;
 }
-.response-container p, .response-container span {
+.response-container p,
+.response-container span {
   padding: 5px 0;
   color: white;
 }/*# sourceMappingURL=App.css.map */

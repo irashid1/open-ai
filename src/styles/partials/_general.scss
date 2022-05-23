@@ -1,12 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@400;600;700;800&display=swap");
 
-$shadow1: gainsboro;
-$gradient: linear-gradient(315deg, #734ae8 0%, #89d4cf 74%);
-
-$primary: #2b8063;
-$secondary: #14C38E;
-$accent1: #B8F1B0;
-$accent2: #E3FCBF;
+$primary: #019267;
+$secondary: #14c38e;
+$accent1: #b8f1b0;
+$accent2: #e3fcbf;
 
 html {
     font-size: 125%;
@@ -18,11 +15,10 @@ body {
     width: 100vw;
 }
 
-
 header {
-    background-color: $secondary;
+    background-color: $primary;
     color: white;
-
+    padding: 15px 0;
 }
 
 h1,
@@ -53,11 +49,22 @@ li {
     list-style: none;
 }
 
+
+h1,
+h2,
+label,
+button,
+textarea,
+p {
+    font-family: "Poppins", sans-serif;
+}
+
 button {
     margin: 10px 5px;
     padding: 10px;
-    background-color: $secondary;
+    background-color: $primary;
     color: white;
+    font-weight: 600;
     border-style: none;
     border-radius: 20px;
     transition: all 0.5s ease-in-out;
@@ -65,7 +72,7 @@ button {
 
 button:hover {
     transition: all 0.5s ease-in-out;
-    background-color: $primary;
+    background-color: $secondary;
     color: white;
 }
 
@@ -76,6 +83,7 @@ input {
 label {
     display: block;
     padding: 15px 0;
+    font-weight: 600;
 }
 
 textarea {
@@ -83,11 +91,6 @@ textarea {
     max-width: 1200px;
     padding: 10px;
 }
-
-h1, h2, label, button, textarea, p {
-    font-family: "Poppins", sans-serif;
-}
-
 .wrapper {
     width: 85%;
     max-width: 1200px;
@@ -101,16 +104,16 @@ h1, h2, label, button, textarea, p {
 }
 
 .word-container {
-
     transition: all;
 }
 
 .response-container {
-    background-color: $secondary;
+    background-color: $primary;
     margin: 15px 0;
     padding: 20px;
     border-radius: 10px;
-    p, span {
+    p,
+    span {
         padding: 5px 0;
         color: white;
     }

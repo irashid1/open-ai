@@ -86,7 +86,7 @@ function App() {
     <div className="App">
       <header>
         <div className="wrapper">
-          <h1>Fun with AI</h1>
+          <h1>Fun with AI 🤖</h1>
         </div>
       </header>
 
