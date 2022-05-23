@@ -106,6 +106,7 @@ function App() {
             <div className="word-container">
 
               {/* mapping the allPromptResponse array */}
+
               {allPromptResponse.map((prop) => {
                 return (
                   <div className="response-container" key={prop.key}>
@@ -122,9 +123,7 @@ function App() {
       </main>
 
       <footer>
-        {/* <div className="wrapper">
-          <p>Created by Imtiaz Rashid</p>
-        </div> */}
+
       </footer>
     </div>
   );
