@@ -3,6 +3,7 @@ import './styles/App.scss';
 
 function App() {
 
+  // states for prompt, response, key, flag and the object with all of the above info
   const [userPrompt, setUserPrompt] = useState("");
   const [userResponse, setUserResponse] = useState("");
   const [userInput, setUserInput] = useState("");
@@ -10,22 +11,27 @@ function App() {
   const [flag, setFlag] = useState(false);
   const [allPromptResponse, setAllPromptResponse] = useState([]);
 
+  // a function that handles submit
   const handleSubmit = (e) => {
     e.preventDefault();
     setUserPrompt(userInput);
   }
 
+  // a function that handles change
   const handleChange = (e) => {
     setUserInput(e.target.value);
   }
 
+
   useEffect(() => {
+    // if flag is true then a new object is created with prompt, response and key
     if (flag === true) {
       const newObj = {
         prompt: userPrompt,
         response: userResponse,
         key: userKey,
       };
+      // using spread operator, sets the array with all prompts and response to itself plus all values in the new object
       setAllPromptResponse([newObj, ...allPromptResponse]);
       setFlag(false);
     }
@@ -42,12 +48,13 @@ function App() {
       presence_penalty: 0.0,
     };
 
-
+    // if there is a input by the user then fetches data from the API
     if (userPrompt) {
       fetch("https://api.openai.com/v1/engines/text-curie-001/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          // accessing the secret key from the env file
           Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY
             }`,
         },
@@ -62,6 +69,7 @@ function App() {
           }
         })
         .then((jsondata) => {
+          // if the fetch is successfull we set the state for userResponse, userKey and flag
           setUserResponse(jsondata.choices[0].text);
           setUserKey(jsondata.created);
           setFlag(true);
@@ -85,8 +93,8 @@ function App() {
       <main>
         <div className="wrapper">
           <form action="" onSubmit={handleSubmit}>
-            <label htmlFor="prompt">Enter Prompt</label>
-            <textarea name="prompt" id="prompt" cols="100" rows="2" onChange={handleChange}></textarea>
+            <label htmlFor="prompt">Enter a prompt to begin</label>
+            <textarea name="prompt" id="prompt" cols="100" rows="1" onChange={handleChange}></textarea>
 
             <div className="button-container">
               <button className="submit-prompt-button" type="submit" >Submit</button>
@@ -97,6 +105,7 @@ function App() {
             <h2>Responses</h2>
             <div className="word-container">
               
+            {/* mapping the allPromptResponse array */}
             {allPromptResponse.map((prop) => {
               return (
                 <div className="response-container" key={prop.key}>
