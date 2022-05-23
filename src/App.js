@@ -104,17 +104,17 @@ function App() {
           <div>
             <h2>Responses</h2>
             <div className="word-container">
-              
-            {/* mapping the allPromptResponse array */}
-            {allPromptResponse.map((prop) => {
-              return (
-                <div className="response-container" key={prop.key}>
-                  <p className="user-prompt">Prompt: <span className="text">{prop.prompt}</span></p>
-                  <p className="user-response">Response: <span className="text">{prop.response}</span></p>
-                </div>
-              );
-            })}
-            
+
+              {/* mapping the allPromptResponse array */}
+              {allPromptResponse.map((prop) => {
+                return (
+                  <div className="response-container" key={prop.key}>
+                    <p className="user-prompt">Prompt: <span className="text">{prop.prompt}</span></p>
+                    <p className="user-response">Response: <span className="text">{prop.response}</span></p>
+                  </div>
+                );
+              })}
+
             </div>
 
           </div>
@@ -122,7 +122,9 @@ function App() {
       </main>
 
       <footer>
-
+        {/* <div className="wrapper">
+          <p>Created by Imtiaz Rashid</p>
+        </div> */}
       </footer>
     </div>
   );

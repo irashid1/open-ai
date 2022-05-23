@@ -15,10 +15,26 @@ body {
     width: 100vw;
 }
 
+// main {
+//     height: 85vh;
+// }
+
 header {
     background-color: $primary;
     color: white;
     padding: 15px 0;
+}
+
+footer {
+    // background-color: $primary;
+    // padding: 20px 0;
+    // position: fixed;
+    // bottom: 0;
+    // display: flex;
+    p {
+        text-align: center;
+        color: white;
+    }
 }
 
 h1,

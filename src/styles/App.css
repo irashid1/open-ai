@@ -247,6 +247,11 @@ header {
   padding: 15px 0;
 }
 
+footer p {
+  text-align: center;
+  color: white;
+}
+
 h1,
 h2,
 h3,
